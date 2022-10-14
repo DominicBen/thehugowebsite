@@ -1,6 +1,6 @@
 baseURL: "http://javeronis.com/"
 languageCode: "en-us"
-title: Welcome to my website!
+title: Golgi's Grotto
 theme: PaperMod
 
 
@@ -9,7 +9,7 @@ params:
     profileMode:
         enabled: true
         title: "Dominic Benintendi" # optional default will be site title
-        subtitle: "Software Engineer and Local Computer Wizard"
+        subtitle: "Software Engineer and Local Computer Wizard, Studied at Ohio University for Computer Science and Eletrical Enginnering, Big fan of the Golgi Apparatus"
         imageUrl: "https://nextcloud.javeronis.com/s/iLHGN55P8ezSoHs/download/transparentwotext.jpg" # optional
         imageTitle: "Cant find the picture :(" # optional
         imageWidth: 120 # custom size

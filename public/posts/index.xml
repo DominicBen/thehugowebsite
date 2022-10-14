@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Welcome to my website!</title>
+    <title>Posts on Golgi&#39;s Grotto</title>
     <link>http://javeronis.com/posts/</link>
-    <description>Recent content in Posts on Welcome to my website!</description>
+    <description>Recent content in Posts on Golgi&#39;s Grotto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Oct 2022 21:08:38 -0400</lastBuildDate><atom:link href="http://javeronis.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Oct 2022 21:08:38 -0400</lastBuildDate><atom:link href="http://javeronis.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to use Markdown</title>
+      <link>http://javeronis.com/posts/how-to-use-markdown/</link>
+      <pubDate>Thu, 13 Oct 2022 21:08:38 -0400</pubDate>
+      
+      <guid>http://javeronis.com/posts/how-to-use-markdown/</guid>
+      <description>This will teach you how to use Markdown :grin: Markdown is a plaintext language that allows users to make HTML like webpages with no coding required These markdown files are simple and easy to make, which make them great for blogs, personal websites, cookbooks, and manifestos alike!
+Bold to make a word bold, Simply surround each side of a word with (**) a double asterisk
+Here is an **Example**  Here is an Example</description>
+    </item>
+    
     <item>
       <title>My First Post</title>
       <link>http://javeronis.com/posts/my-first-post/</link>

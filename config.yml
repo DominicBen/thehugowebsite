@@ -1,0 +1,29 @@
+baseURL: "http://javeronis.com/"
+languageCode: "en-us"
+title: Welcome to my website!
+theme: PaperMod
+
+
+params:
+    hideFooter: true
+    profileMode:
+        enabled: true
+        title: "Dominic Benintendi" # optional default will be site title
+        subtitle: "Software Engineer and Local Computer Wizard"
+        imageUrl: "https://nextcloud.javeronis.com/s/iLHGN55P8ezSoHs/download/transparentwotext.jpg" # optional
+        imageTitle: "Cant find the picture :(" # optional
+        imageWidth: 120 # custom size
+        imageHeight: 120 # custom size
+        buttons:
+          - name: Posts
+            url: "/posts/"
+          - name: Archive
+            url: "/archives/"
+
+    socialIcons: # optional
+      - name: "Instagram"
+        url: "https://www.instagram.com/dominic.benintendi/"
+      - name: "Linkedin"
+        url: "https://www.linkedin.com/in/dominic-benintendi-023756179/"
+      - name: "Github"
+        url: "https://github.com/DominicBen"

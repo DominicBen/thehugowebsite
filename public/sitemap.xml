@@ -2,17 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/posts/my-first-post/</loc>
+    <loc>http://javeronis.com/posts/my-first-post/</loc>
     <lastmod>2022-10-10T21:08:38-04:00</lastmod>
   </url><url>
-    <loc>/</loc>
+    <loc>http://javeronis.com/posts/</loc>
     <lastmod>2022-10-10T21:08:38-04:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>http://javeronis.com/</loc>
     <lastmod>2022-10-10T21:08:38-04:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>http://javeronis.com/archives/</loc>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>http://javeronis.com/categories/</loc>
+  </url><url>
+    <loc>http://javeronis.com/tags/</loc>
   </url>
 </urlset>

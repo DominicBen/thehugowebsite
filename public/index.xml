@@ -1,32 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Golgi&#39;s Grotto</title>
-    <link>http://javeronis.com/</link>
-    <description>Recent content on Golgi&#39;s Grotto</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 13 Oct 2022 21:08:38 -0400</lastBuildDate><atom:link href="http://javeronis.com/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>How to use Markdown</title>
-      <link>http://javeronis.com/posts/how-to-use-markdown/</link>
-      <pubDate>Thu, 13 Oct 2022 21:08:38 -0400</pubDate>
-      
-      <guid>http://javeronis.com/posts/how-to-use-markdown/</guid>
-      <description>This will teach you how to use Markdown :grin: Markdown is a plaintext language that allows users to make HTML like webpages with no coding required These markdown files are simple and easy to make, which make them great for blogs, personal websites, cookbooks, and manifestos alike!
-Bold to make a word bold, Simply surround each side of a word with (**) a double asterisk
-Here is an **Example**  Here is an Example</description>
-    </item>
-    
-    <item>
-      <title>My First Post</title>
-      <link>http://javeronis.com/posts/my-first-post/</link>
-      <pubDate>Mon, 10 Oct 2022 21:08:38 -0400</pubDate>
-      
-      <guid>http://javeronis.com/posts/my-first-post/</guid>
-      <description>Welcome to my first post! </description>
-    </item>
-    
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Golgi&#39;s Grotto</title>
+        <link>http://javeronis.com/</link>
+        <description>Software Engineer and Local Computer Wizard, Studied at Ohio University for Computer Science and Eletrical Enginnering, Big fan of the Golgi Apparatus</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 13 Oct 2022 21:08:38 -0400</lastBuildDate>
+            <atom:link href="http://javeronis.com/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>How to use Markdown</title>
+    <link>http://javeronis.com/posts/how-to-use-markdown/</link>
+    <pubDate>Thu, 13 Oct 2022 21:08:38 -0400</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://javeronis.com/posts/how-to-use-markdown/</guid>
+    <description><![CDATA[This will teach you how to use Markdown 😁Markdown is a plaintext language that allows users to make HTML like webpages with no coding required These markdown files are simple and easy to make, which make them great for blogs, personal websites, cookbooks, and manifestos alike!
+Boldto make a word bold, Simply surround each side of a word with (**) a double asterisk
+Here is an **Example**  Here is an Example]]></description>
+</item><item>
+    <title>My First Post</title>
+    <link>http://javeronis.com/posts/my-first-post/</link>
+    <pubDate>Mon, 10 Oct 2022 21:08:38 -0400</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://javeronis.com/posts/my-first-post/</guid>
+    <description><![CDATA[Welcome to my first post!]]></description>
+</item></channel>
 </rss>

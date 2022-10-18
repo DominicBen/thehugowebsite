@@ -1,30 +1,47 @@
 baseURL: "http://javeronis.com/"
 languageCode: "en-us"
 title: Golgi's Grotto
-theme: PaperMod
-
-
+theme: DoIt
+enableEmoji: true
+languages:
+  en:
+    weight: 1
+    languageCode: "en"
+    languagename: "English"
+    menu:
+      main:
+        - identifier: "posts"
+          name: "Posts"
+          url: "/posts/"
+          weight: 1
+    
 params:
-    enableEmoji: true
-    hideFooter: true
-    profileMode:
-        enabled: true
-        title: "Dominic Benintendi" # optional default will be site title
-        subtitle: "Software Engineer and Local Computer Wizard, Studied at Ohio University for Computer Science and Eletrical Enginnering, Big fan of the Golgi Apparatus"
-        imageUrl: "https://nextcloud.javeronis.com/s/iLHGN55P8ezSoHs/download/transparentwotext.jpg" # optional
-        imageTitle: "Cant find the picture :(" # optional
-        imageWidth: 120 # custom size
-        imageHeight: 120 # custom size
-        buttons:
-          - name: Posts
-            url: "/posts/"
-          - name: Archive
-            url: "/archives/"
-
-    socialIcons: # optional
-      - name: "Instagram"
-        url: "https://www.instagram.com/dominic.benintendi/"
-      - name: "Linkedin"
-        url: "https://www.linkedin.com/in/dominic-benintendi-023756179/"
-      - name: "Github"
-        url: "https://github.com/DominicBen"
+  version: "0.2.X"
+  title: Golgi's Grotto
+  description: "Software Engineer and Local Computer Wizard, Studied at Ohio University for Computer Science and Eletrical Enginnering, Big fan of the Golgi Apparatus"
+  defaultTheme: "auto"
+  dateFormat: "01-02-2006"
+  images: ["assets/pfp.jpg"]
+  header:
+    desktopMode: "fixed"
+    mobileMode: "auto"
+    title:
+      name: "Golgi's Grotto"
+  footer:
+    enable: false
+  home:
+    profile:
+      enable: true
+      avatarURL: "/assets/pfp.jpg"
+      title: "Golgi's Grotto"
+      subtitle: "Software Engineer and Local Computer Wizard, Studied at Ohio University for Computer Science and Eletrical Enginnering, Big fan of the Golgi Apparatus"
+      social: true
+    posts:
+      enable: true
+      paginate: 6
+  social:
+    GitHub: "DominicBen"
+    Linkedin: "dominic-benintendi-023756179"
+    Instagram: "dominic.benintendi"
+    Twitter: ""
+    Youtubechannel: ""

@@ -5,6 +5,7 @@ theme: PaperMod
 
 
 params:
+    enableEmoji: true
     hideFooter: true
     profileMode:
         enabled: true

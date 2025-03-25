@@ -1,4 +1,4 @@
-baseURL: "http://javeronis.com/"
+baseURL: "https://dominicben.github.io/thehugowebsite/"
 languageCode: "en-us"
 title: Homepage
 theme: DoIt
@@ -21,7 +21,7 @@ params:
   description: "Hello World"
   defaultTheme: "auto"
   dateFormat: "01-02-2006"
-  images: ["content/assets/pfp.jpg"]
+  images: ["assets/pfp.jpg"]
   header:
     desktopMode: "fixed"
     mobileMode: "auto"
@@ -32,7 +32,7 @@ params:
   home:
     profile:
       enable: true
-      avatarURL: "content/assets/pfp.jpg"
+      avatarURL: "assets/pfp.jpg"
       title: "Dominic Benintendi"
       subtitle: "Software Engineer and Local Computer Wizard, Studied at Ohio University for Computer Science and Eletrical Enginnering"
       social: true

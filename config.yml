@@ -32,7 +32,7 @@ params:
   home:
     profile:
       enable: true
-      avatarURL: "/assets/pfp.jpg"
+      avatarURL: "content/assets/pfp.jpg"
       title: "Dominic Benintendi"
       subtitle: "Software Engineer and Local Computer Wizard, Studied at Ohio University for Computer Science and Eletrical Enginnering"
       social: true

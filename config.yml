@@ -21,7 +21,7 @@ params:
   description: "Hello World"
   defaultTheme: "auto"
   dateFormat: "01-02-2006"
-  images: ["assets/pfp.jpg"]
+  images: ["content/assets/pfp.jpg"]
   header:
     desktopMode: "fixed"
     mobileMode: "auto"

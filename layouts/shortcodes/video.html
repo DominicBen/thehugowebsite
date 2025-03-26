@@ -1,0 +1,12 @@
+{{- $path := .Get "src" -}}
+{{- $video := $path -}}
+
+{{- with dict "Path" $path "Resources" .Page.Resources | partial "function/resource.html" -}}
+  {{- $video = .RelPermalink -}}
+{{- end -}}
+
+<video controls width="{{ .Get "width" | default "800" }}">
+  <source src="{{ $video | safeURL }}" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+

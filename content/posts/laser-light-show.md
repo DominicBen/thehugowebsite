@@ -142,4 +142,3 @@ I’m proud of how our team executed the project from concept to demo. The resul
 {{< figure src="/assets/EECapstone/Photos/Snapchat-1304687775.jpg" alt="Pi" width="300" >}}
 {{< video src="/assets/EECapstone/Photos/Snapchat-796663386-v1.mp4" width="300" >}}
 {{< video src="/assets/EECapstone/Photos/Snapchat-1600023489-v1.mp4" width="300" >}}
-{{< video src="/assets/EECapstone/Photos/20230413_110316-v1.mp4" width="300" >}}

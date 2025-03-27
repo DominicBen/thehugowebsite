@@ -2,6 +2,7 @@
 title: "How to use Markdown"
 date: 2022-10-13T21:08:38-04:00
 draft: false
+featuredImage: "/assets/md.jpg"
 authors: ["Dominic"]
 ---
 ### This will teach you how to use Markdown :grin:

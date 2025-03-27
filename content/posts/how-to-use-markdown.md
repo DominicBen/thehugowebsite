@@ -4,145 +4,210 @@ date: 2022-10-13T21:08:38-04:00
 draft: false
 authors: ["Dominic"]
 ---
-### This will teach you how to use Markdown :grin:
 
-Markdown is a plaintext language that allows users to make HTML like webpages with no coding required
-These markdown files are simple and easy to make, which make them great for blogs, personal websites, cookbooks, and manifestos alike!
 
+### Learn How to Use Markdown :grin:
+
+Markdown is a plaintext language that allows users to create HTML-like webpages without writing any code.  
+These files are simple and easy to write, making them perfect for blogs, personal websites, cookbooks, and even manifestos!
+
+---
 
 ## Bold
-to make a word **bold**, Simply surround each side of a word with (**) a double asterisk
 
-    Here is an **Example**
-Here is an **Example**
+To make text **bold**, simply surround the word or phrase with double asterisks `**`.
+
+```markdown
+Here is an **example**
+```
+
+Here is an **example**
+
+---
 
 ## Italics
-Similar to bold, Surround each side of a word with (_) an underscore
 
-    very _simple_
+To *italicize* text, wrap the word or phrase in underscores `_`.
+
+```markdown
+very _simple_
+```
+
 very _simple_
 
-These tricks **can also span across multiple words**
-To do both at the same time, place asterisks on the outside, and underscores on the inside
+You can also **combine** bold and italics:
 
-    **_Like This_**
-**_Like This_**
+```markdown
+**_Like this_**
+```
+
+**_Like this_**
+
+---
 
 ## Headers
 
-Headers are text of increased size, usually to denote different sections of a document
+Headers are used to organize your content into sections.
 
+```markdown
 # Header 1 (Largest)
-## Header 2 
+## Header 2
 ### Header 3
 #### Header 4
 ##### Header 5
 ###### Header 6 (Smallest)
+```
+
+# Header 1 (Largest)  
+## Header 2  
+### Header 3  
+#### Header 4  
+##### Header 5  
+###### Header 6 (Smallest)
+
+---
 
 ## Divider
 
-You can add a divider by placing three hyphens on a single line `---`
+Add a divider using three hyphens on a single line:
 
+```markdown
 ---
----
+```
+
 ---
 
 ## Hyperlinks
 
-inline Hyperlinks are simple to create
+Inline hyperlinks are created using square brackets for the text and parentheses for the URL:
 
-follows the format [] followed by (), brackets contain the word, while parentheses contain the URL for the link
+```markdown
+[Check out my website](https://javeronis.com)
+```
 
-    [Checkout my website](javeronis.com)
-     
-[Checkout my website](javeronis.com)
+[Check out my website](https://javeronis.com)
 
-
+---
 
 ## Images
 
-Images are similar to links; we just preface images with an exclamation mark (!)
+Images are similar to links but start with an exclamation mark:
 
-    ![A pretty tiger](https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg)
+```markdown
+![A pretty tiger](https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg)
+```
 
 ![A pretty tiger](https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg)
 
+---
+
 ## Block Quotes
 
-If you want to make a block quote you can prefix a string with (>) greater than
+Create block quotes by using the greater-than symbol `>`:
 
-    >"To be or not to be, that is the question"
-    
->"To be or not to be, that is the question"
+```markdown
+> "To be or not to be, that is the question."
+```
+
+> "To be or not to be, that is the question."
+
+---
 
 ## Code Blocks
 
-Code blocks, which I have been using throughout this paper, are written by placing four spaces before a line
+To make a code block, indent the line with four spaces:
 
-        It’s that simple
+```plaintext
+    It's that simple
+```
 
-    you can also code block multiple lines by using (~~~) three Squiggles
+Or use three backticks (```) or tildes (~~~) to enclose multiple lines:
 
-    ~~~
-    kind of  
-    like  
-    this  
-    ~~~
+```markdown
+~~~
+kind of  
+like  
+this  
+~~~
+```
 
-    Also, surrounding a string in (`) single quotes
+~~~
+kind of  
+like  
+this  
+~~~
+
+You can also highlight inline code using backticks:
+
+```markdown
+`inline code`
+```
+
+---
 
 ## Lists
 
-Lists are easy, each item in a line is prefixed with (*) an asterisk
-for sub-bullets, simply add three spaces before the (*)
+Lists are simple—use an asterisk `*` for bullet points:
 
-### Things you need to make a grilled cheese sandwich :weary:
-
-~~~
-* Bread
-* Cheese
-* 8mL of demon blood
-* Butter
- * Mayonnaise works too
-~~~
-
+```markdown
 * Bread
 * Cheese
 * 8mL of demon blood
 * Butter
    * Mayonnaise works too
+```
 
-You can also do numbered lists by prefixing a line with (n.) where n is the number in the list
-### five ten games
+* Bread  
+* Cheese  
+* 8mL of demon blood  
+* Butter  
+   * Mayonnaise works too
 
-~~~
+For numbered lists, use numbers followed by a period:
+
+```markdown
 1. Tetris
 2. Minecraft
-3. Shrek 2 for the Gameboy
+3. Shrek 2 for the Game Boy
 4. God
 5. Tetris
-~~~
+```
 
-1. Tetris
-2. Minecraft
-3. Shrek 2 for the Gameboy :sunglasses:
-4. God
+1. Tetris  
+2. Minecraft  
+3. Shrek 2 for the Game Boy :sunglasses:  
+4. God  
 5. Tetris
+
+---
 
 ## Emojis
-You can actually use emojis in markdown by placing a special code between two colons (:x:)
-:+1:`:+1:`
 
-## A note on newlines
+You can use emojis by wrapping their shortcode between colons:
 
-by default, markdown will not render the next line to a new line
-to fix this, place two spaces at the end of a line, to insert a new line.
-now, let’s rewrite this really quick
+```markdown
+:+1:
+```
 
-by default, markdown will not render the next line to a new line  
-to fix this, place two spaces at the end of a line, to insert a new line.  
+:+1:
 
+---
 
-## Congrats
+## A Note on Newlines
 
-You learned some fundamental concepts of the markdown language :+1:
+By default, Markdown won't start a new line just because you hit "Enter."  
+To force a new line, add **two spaces** at the end of a line:
+
+```markdown
+This is one line.  
+This is another.
+```
+
+This is one line.  
+This is another.
+
+---
+
+## Congrats!
+
+You’ve just learned the fundamentals of Markdown! :+1:

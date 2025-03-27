@@ -3,18 +3,30 @@ languageCode: "en-us"
 title: Homepage
 theme: DoIt
 enableEmoji: true
+
+menu:
+  main:
+    - identifier: "posts"
+      pre: ""
+      post: ""
+      name: "Posts"
+      url: "/posts/"
+      title: ""
+      weight: 1
+    - identifier: "resume"
+      pre: ""
+      post: ""
+      name: "Resume"
+      url: "/resume.pdf"
+      title: ""
+      weight: 2
+
 languages:
   en:
     weight: 1
     languageCode: "en"
     languagename: "English"
-    menu:
-      main:
-        - identifier: "posts"
-          name: "Posts"
-          url: "/posts/"
-          weight: 1
-    
+
 params:
   version: "0.2.X"
   title: Dominic Benintendi
@@ -22,13 +34,16 @@ params:
   defaultTheme: "auto"
   dateFormat: "01-02-2006"
   images: ["assets/pfp.jpg"]
+
   header:
     desktopMode: "fixed"
     mobileMode: "auto"
     title:
       name: "Dom's Domicile"
+
   footer:
     enable: false
+
   home:
     profile:
       enable: true
@@ -39,6 +54,7 @@ params:
     posts:
       enable: true
       paginate: 6
+
   social:
     GitHub: "DominicBen"
     Linkedin: "dominic-benintendi-023756179"

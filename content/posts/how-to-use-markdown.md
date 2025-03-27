@@ -4,210 +4,145 @@ date: 2022-10-13T21:08:38-04:00
 draft: false
 authors: ["Dominic"]
 ---
+### This will teach you how to use Markdown :grin:
 
+Markdown is a plaintext language that allows users to make HTML like webpages with no coding required
+These markdown files are simple and easy to make, which make them great for blogs, personal websites, cookbooks, and manifestos alike!
 
-### Learn How to Use Markdown :grin:
-
-Markdown is a plaintext language that allows users to create HTML-like webpages without writing any code.  
-These files are simple and easy to write, making them perfect for blogs, personal websites, cookbooks, and even manifestos!
-
----
 
 ## Bold
+to make a word **bold**, Simply surround each side of a word with (**) a double asterisk
 
-To make text **bold**, simply surround the word or phrase with double asterisks `**`.
-
-```markdown
-Here is an **example**
-```
-
-Here is an **example**
-
----
+    Here is an **Example**
+Here is an **Example**
 
 ## Italics
+Similar to bold, Surround each side of a word with (_) an underscore
 
-To *italicize* text, wrap the word or phrase in underscores `_`.
-
-```markdown
-very _simple_
-```
-
+    very _simple_
 very _simple_
 
-You can also **combine** bold and italics:
+These tricks **can also span across multiple words**
+To do both at the same time, place asterisks on the outside, and underscores on the inside
 
-```markdown
-**_Like this_**
-```
-
-**_Like this_**
-
----
+    **_Like This_**
+**_Like This_**
 
 ## Headers
 
-Headers are used to organize your content into sections.
+Headers are text of increased size, usually to denote different sections of a document
 
-```markdown
 # Header 1 (Largest)
-## Header 2
+## Header 2 
 ### Header 3
 #### Header 4
 ##### Header 5
 ###### Header 6 (Smallest)
-```
-
-# Header 1 (Largest)  
-## Header 2  
-### Header 3  
-#### Header 4  
-##### Header 5  
-###### Header 6 (Smallest)
-
----
 
 ## Divider
 
-Add a divider using three hyphens on a single line:
+You can add a divider by placing three hyphens on a single line ---
 
-```markdown
 ---
-```
-
+---
 ---
 
 ## Hyperlinks
 
-Inline hyperlinks are created using square brackets for the text and parentheses for the URL:
+inline Hyperlinks are simple to create
 
-```markdown
-[Check out my website](https://javeronis.com)
-```
+follows the format [] followed by (), brackets contain the word, while parentheses contain the URL for the link
 
-[Check out my website](https://javeronis.com)
+    [Checkout my website](javeronis.com)
+     
+[Checkout my website](javeronis.com)
 
----
+
 
 ## Images
 
-Images are similar to links but start with an exclamation mark:
+Images are similar to links; we just preface images with an exclamation mark (!)
 
-```markdown
-![A pretty tiger](https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg)
-```
+    ![A pretty tiger](https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg)
 
 ![A pretty tiger](https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg)
-
----
 
 ## Block Quotes
 
-Create block quotes by using the greater-than symbol `>`:
+If you want to make a block quote you can prefix a string with (>) greater than
 
-```markdown
-> "To be or not to be, that is the question."
-```
-
-> "To be or not to be, that is the question."
-
----
+    >"To be or not to be, that is the question"
+    
+>"To be or not to be, that is the question"
 
 ## Code Blocks
 
-To make a code block, indent the line with four spaces:
+Code blocks, which I have been using throughout this paper, are written by placing four spaces before a line
 
-```plaintext
-    It's that simple
-```
+        It’s that simple
 
-Or use three backticks (```) or tildes (~~~) to enclose multiple lines:
+    you can also code block multiple lines by using (~~~) three Squiggles
 
-```markdown
-~~~
-kind of  
-like  
-this  
-~~~
-```
+    ~~~
+    kind of  
+    like  
+    this  
+    ~~~
 
-~~~
-kind of  
-like  
-this  
-~~~
-
-You can also highlight inline code using backticks:
-
-```markdown
-`inline code`
-```
-
----
+    Also, surrounding a string in () single quotes
 
 ## Lists
 
-Lists are simple—use an asterisk `*` for bullet points:
+Lists are easy, each item in a line is prefixed with (*) an asterisk
+for sub-bullets, simply add three spaces before the (*)
 
-```markdown
+### Things you need to make a grilled cheese sandwich :weary:
+
+~~~
+* Bread
+* Cheese
+* 8mL of demon blood
+* Butter
+ * Mayonnaise works too
+~~~
+
 * Bread
 * Cheese
 * 8mL of demon blood
 * Butter
    * Mayonnaise works too
-```
 
-* Bread  
-* Cheese  
-* 8mL of demon blood  
-* Butter  
-   * Mayonnaise works too
+You can also do numbered lists by prefixing a line with (n.) where n is the number in the list
+### five ten games
 
-For numbered lists, use numbers followed by a period:
-
-```markdown
+~~~
 1. Tetris
 2. Minecraft
-3. Shrek 2 for the Game Boy
+3. Shrek 2 for the Gameboy
 4. God
 5. Tetris
-```
+~~~
 
-1. Tetris  
-2. Minecraft  
-3. Shrek 2 for the Game Boy :sunglasses:  
-4. God  
+1. Tetris
+2. Minecraft
+3. Shrek 2 for the Gameboy :sunglasses:
+4. God
 5. Tetris
 
----
-
 ## Emojis
+You can actually use emojis in markdown by placing a special code between two colons (:x:)
+:+1::+1:
 
-You can use emojis by wrapping their shortcode between colons:
+## A note on newlines
 
-```markdown
-:+1:
-```
+by default, markdown will not render the next line to a new line
+to fix this, place two spaces at the end of a line, to insert a new line.
+now, let’s rewrite this really quick
 
-:+1:
+by default, markdown will not render the next line to a new line  
+to fix this, place two spaces at the end of a line, to insert a new line.  
 
----
 
-## A Note on Newlines
+## Congrats
 
-By default, Markdown won't start a new line just because you hit "Enter."  
-To force a new line, add **two spaces** at the end of a line:
-
-```markdown
-This is one line.  
-This is another.
-```
-
-This is one line.  
-This is another.
-
----
-
-## Congrats!
-
-You’ve just learned the fundamentals of Markdown! :+1:
+You learned some fundamental concepts of the markdown language :+1:

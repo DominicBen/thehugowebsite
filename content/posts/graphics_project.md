@@ -5,9 +5,6 @@ draft: false
 featuredImage: "/assets/graphics_project/image_page5_1.png"
 authors: ["Dominic"]
 ---
-#   
-**Dominic Benintedi**  
-**12/10/21**
 
 Working on this project taught me a priceless amount of information regarding computer graphics. I feel accomplished in how much was achieved with such a simple little project. To dive a little deeper, we will talk about what my project is, what technologies and strategies were used to implement it, what went right, and what went wrong.
 

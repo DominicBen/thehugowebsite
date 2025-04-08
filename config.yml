@@ -57,7 +57,7 @@ params:
       enable: true
       avatarURL: "assets/pfp.jpg"
       title: "Dominic Benintendi"
-      subtitle: "Software Engineer and Local Computer Wizard, Studied at Ohio University for Computer Science and Eletrical Enginnering"
+      subtitle: "Software Engineer and Local Computer Wizard, Studied at Ohio University for Computer Science and Electrical Enginnering"
       social: true
     posts:
       enable: true

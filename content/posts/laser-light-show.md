@@ -9,7 +9,7 @@ authors: ["Dominic"]
 In my final year at Ohio University, I worked on a senior design project that required a full-stack approach to hardware and software integration. Together with my teammates—Ian Gant, Aditya Sahi, and Drew Edmonds—we developed a laser-based game console capable of projecting vector graphics, animations, and multiple playable games using precision-controlled laser beams.
 
 The system, which we named the Laser Light Show, combined embedded systems design, analog signal processing, optics, 3D modeling, software engineering, and real-time control. We set out to design something interactive and technically novel, and we succeeded by staying grounded in first principles and rigorous testing.
-
+[GitHub Repository](https://github.com/DominicBen/LASER-LIGHT-SHOW)
 ## 🎯 Project Overview
 
 The core idea was to steer a focused laser beam using galvo-mounted mirrors to draw images in mid-air, fast enough to leverage persistence of vision. These vector drawings would be interactive—controlled via handheld input devices—and capable of supporting full game logic.

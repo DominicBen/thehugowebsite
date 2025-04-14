@@ -30,7 +30,7 @@ languages:
 params:
   version: "0.2.X"
   title: Dominic Benintendi
-  description: "Hello World"
+  description: "My personal website"
   defaultTheme: "auto"
   dateFormat: "01-02-2006"
   images: ["assets/pfp.jpg"]
@@ -47,7 +47,7 @@ params:
     desktopMode: "fixed"
     mobileMode: "auto"
     title:
-      name: "Dom's Domicile"
+      name: "Dominic's Website"
 
   footer:
     enable: false
@@ -57,7 +57,7 @@ params:
       enable: true
       avatarURL: "assets/pfp.jpg"
       title: "Dominic Benintendi"
-      subtitle: "Software Engineer and Local Computer Wizard, Studied at Ohio University for Computer Science and Electrical Enginnering"
+      subtitle: "Your Local Computer Engineer, Studied at Ohio University for Computer Science and Electrical Enginnering"
       social: true
     posts:
       enable: true

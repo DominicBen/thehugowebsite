@@ -33,15 +33,15 @@ params:
   description: "My personal website"
   defaultTheme: "auto"
   dateFormat: "01-02-2006"
-  images: ["assets/pfp.jpg"]
+  images: ["assets/2025Headshot.jpg"]
   
   author:
     name: "Dominic"
     email: "bdominic00@gmail.com"
-    avatar: "assets/pfp.jpg"
+    avatar: "assets/pfp.webp"
 
   page:
-    author: false
+    author: true
 
   header:
     desktopMode: "fixed"
@@ -55,7 +55,7 @@ params:
   home:
     profile:
       enable: true
-      avatarURL: "assets/pfp.jpg"
+      avatarURL: "https://media.licdn.com/dms/image/v2/D5603AQHCyOhjZz-dLw/profile-displayphoto-shrink_800_800/B56ZY2QMsAHoAc-/0/1744666938569?e=1750291200&v=beta&t=V2sZ_T5T2ey3P3eAv5l6EIH938a3mrGa2DDAftqoDzI"
       title: "Dominic Benintendi"
       subtitle: "Your Local Computer Engineer, Studied at Ohio University for Computer Science and Electrical Enginnering"
       social: true

@@ -7,18 +7,18 @@ authors: ["Dominic"]
 ---
 ### This will teach you how to use Markdown :grin:
 
-Markdown is a plaintext language that allows users to make HTML like webpages with no coding required
-These markdown files are simple and easy to make, which make them great for blogs, personal websites, cookbooks, and manifestos alike!
+Markdown is a plain text language that allows users to create HTML-like webpages without requiring coding.  
+These Markdown files are simple and easy to create, making them great for blogs, personal websites, cookbooks, and manifestos alike!
 
 
-## Bold
-to make a word **bold**, Simply surround each side of a word with (**) a double asterisk
+## Bold  
+To make a word **bold**, simply surround each side of the word with (**) a double asterisk.
 
     Here is an **Example**
 Here is an **Example**
 
-## Italics
-Similar to bold, Surround each side of a word with (_) an underscore
+## Italics  
+Similar to bold, surround each side of the word with (_) an underscore.
 
     very _simple_
 very _simple_
@@ -31,7 +31,7 @@ To do both at the same time, place asterisks on the outside, and underscores on 
 
 ## Headers
 
-Headers are text of increased size, usually to denote different sections of a document
+Headers are text of increased size, usually used to denote different sections of a document.
 
 # Header 1 (Largest)
 ## Header 2 
@@ -50,9 +50,8 @@ You can add a divider by placing three hyphens on a single line ---
 
 ## Hyperlinks
 
-inline Hyperlinks are simple to create
-
-follows the format [] followed by (), brackets contain the word, while parentheses contain the URL for the link
+Inline hyperlinks are simple to create.  
+Follow the format [] followed by (), where brackets contain the word, and parentheses contain the URL for the link.
 
     [Checkout my website](javeronis.com)
      
@@ -70,7 +69,7 @@ Images are similar to links; we just preface images with an exclamation mark (!)
 
 ## Block Quotes
 
-If you want to make a block quote you can prefix a string with (>) greater than
+If you want to create a block quote, you can prefix a string with (>) greater than.
 
     >"To be or not to be, that is the question"
     
@@ -78,7 +77,7 @@ If you want to make a block quote you can prefix a string with (>) greater than
 
 ## Code Blocks
 
-Code blocks, which I have been using throughout this paper, are written by placing four spaces before a line
+Code blocks, which I have been using throughout this document, are written by placing four spaces before a line.
 
         It’s that simple
 
@@ -94,7 +93,7 @@ Code blocks, which I have been using throughout this paper, are written by placi
 
 ## Lists
 
-Lists are easy, each item in a line is prefixed with (*) an asterisk
+Lists are easy; each item in a line is prefixed with (*) an asterisk.
 for sub-bullets, simply add three spaces before the (*)
 
 ### Things you need to make a grilled cheese sandwich :weary:
@@ -136,7 +135,7 @@ You can actually use emojis in markdown by placing a special code between two co
 
 ## A note on newlines
 
-by default, markdown will not render the next line to a new line
+By default, Markdown will not render the next line as a new line.
 to fix this, place two spaces at the end of a line, to insert a new line.
 now, let’s rewrite this really quick
 

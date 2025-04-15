@@ -57,7 +57,7 @@ params:
       enable: true
       avatarURL: "https://media.licdn.com/dms/image/v2/D5603AQFcEa5M8bHjVA/profile-displayphoto-shrink_800_800/B56ZY25f1vHQAg-/0/1744677764889?e=1750291200&v=beta&t=K2rtHnq9LnB1lA_YHJ4SnnSWumtl1gc1sC_8y48cMjs"
       title: "Dominic Benintendi"
-      subtitle: "Studied at Ohio University for Computer Science and Electrical Engineering"
+      subtitle: "Studied at Ohio University for Computer Science and Electrical Engineering. Born and raised in Ohio."
       social: true
     posts:
       enable: true

@@ -20,7 +20,14 @@ menu:
       url: "/resume.pdf"
       title: ""
       weight: 2
-
+    # - identifier: "about"
+    #   pre: ""
+    #   post: ""
+    #   name: "About"
+    #   url: "/about/"
+    #   title: ""
+    #   weight: 2
+    #
 languages:
   en:
     weight: 1
@@ -57,7 +64,7 @@ params:
       enable: true
       avatarURL: "assets/2025Headshot.jpg"
       title: "Dominic Benintendi"
-      subtitle: "Studied at Ohio University for Computer Science and Electrical Engineering. Born and raised in Ohio."
+      subtitle: "Studied at Ohio University for Computer Science and Electrical Engineering."
       social: true
     posts:
       enable: true

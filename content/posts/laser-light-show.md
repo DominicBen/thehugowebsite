@@ -2,7 +2,7 @@
 title: "Laser Light Show: Capstone Project"
 date: 2023-05-25T21:08:38-04:00
 draft: false
-featuredImage: "/assets/EECapstone/Photos/figures/idea.png"
+featuredImage: "/assets/EECapstone/Photos/figures/cover.png"
 authors: ["Dominic"]
 ---
 

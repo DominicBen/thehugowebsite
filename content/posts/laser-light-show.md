@@ -55,11 +55,9 @@ Our work included:
 {{< figure src="/assets/EECapstone/Photos/figures/harness.png" alt="Hardness for lasers" width="600" >}}
 * Engineering a custom 3D-printed enclosure that included cooling airflow, heatsinks, component cutouts, and a laser-safe optical window
 
-The reliability of the final hardware platform was the direct result of Ian’s iterative prototyping and mechanical foresight. His diagrams, schematics, and part layouts were essential in maintaining signal integrity and thermal performance.
 
 {{< figure src="/assets/EECapstone/Photos/figures/hardware.png" alt="Concept Art" width="600" >}}
 
-Check out his work here, He is an extremely smart guy and deserves credit: https://github.com/Igant01
 
 ## 🕹️ Input, Output, and Control
 
@@ -135,7 +133,7 @@ These were all debugged incrementally. Testing and verification at the system le
 
 The Laser Light Show Console was both an engineering challenge and a proving ground. It combined embedded control, real-time graphics, interactive input, and hardware design. The difficulties were numerous, which is why winning first place at the expo was all the sweeter.
 
-I’m proud of how our team executed the project from concept to demo. The result wasn’t just technically sound—it was something people could interact with and enjoy. It taught me how to handle complexity, manage risk, and build systems that work under pressure. Ian, if your reading this, Thanks for being my teammate, your a wicked smart dude! I also want to thank our advisor Dan Allwine for his sage wisdom during the project.
+I’m proud of how our team executed the project from concept to demo. The result wasn’t just technically sound, it was something people could interact with and enjoy. It taught me how to handle complexity, manage risk, and build systems that work under pressure. Ian, if your reading this, Thanks for being my teammate, your a wicked smart dude! I also want to thank our advisor Dan Allwine for his sage wisdom during the project.
 
 — Dominic Benintendi
 

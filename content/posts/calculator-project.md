@@ -5,155 +5,158 @@ draft: false
 featuredImage: "/assets/calculator/image_36.png"
 authors: ["Dominic"]
 ---
+> **Contributors**: Dominic Benintendi (Parser/Lexer, System Architecture)
+> Devin Macy (Input Handling, LCD/Keypad Logic)
+> Colin Russell (Documentation, UI Design)
+> AL-Husain Bani Oraba (Schematics, Requirements)  
+> **GitHub Repository**: [devin-macy/senior-design-calculator](https://github.com/devin-macy/senior-design-calculator)
 
-# Four-Function Calculator  
-**EE4953 Project | Fall 2022**  
-[GitHub Repository](https://github.com/devin-macy/senior-design-calculator)
+# Introduction
 
-## Team Members
-- **Dominic Benintendi** – Parser/Lexer development, system architecture
-- **Devin Macy** – LCD/keypad logic, input handling, shift/button mappings
-- **Colin Russell** – Documentation, user guide, interface design
-- **AL-Husain Bani Oraba** – Diagrams, system requirements, documentation support
+This project involved designing and implementing a fully functional four-function calculator using an Arduino Nano. The goal was to build a robust, extensible, and user-friendly device that mimicked the behavior of standard calculators while operating within microcontroller constraints. Key features included expression parsing, syntax validation, floating-point arithmetic, and input history navigation.
 
-## Overview
-{{< figure src="/assets/calculator/image_16.png" alt="Hardness for lasers" width="600" >}}
-I designed and built a fully functional four-function calculator using an Arduino Nano, 1602 LCD, and a 4x4 membrane keypad. The goal was to create a reliable and user-friendly device that adheres to the standard conventions of modern calculators while operating within hardware constraints.
+# Background and Objectives
 
-## Features
-- Arithmetic: Add, subtract, multiply, divide
-- Extra operations: Parentheses, exponents, floating point
-- Syntax error handling with helpful messages
-- Expression editing with arrow keys, insert/delete
-- History navigation for past expressions
-- Dual clear functionality: `Clear` and `Clear All`
+Created as part of the EE4953 course in Fall 2022, this calculator extended beyond basic arithmetic to include exponentiation, parentheses, and floating-point support. The system was designed to be object-oriented, modular, and error-resilient, with a custom-built recursive descent parser and real-time LCD output.
 
-## Hardware
-- **Microcontroller:** Arduino Nano  
-{{< figure src="/assets/calculator/image_8.png" alt="Hardness for lasers" width="600" >}}
-- **Display:** 1602 LCD via I2C  
-{{< figure src="/assets/calculator/image_18.png" alt="Hardness for lasers" width="600" >}}
-- **Input:** 4x4 membrane keypad + 2 shift pushbuttons  
-{{< figure src="/assets/calculator/image_20.png" alt="Hardness for lasers" width="600" >}}
-- **Power:** 5V via USB Mini-B
+{{< figure src="/assets/calculator/image_16.png" alt="Calculator overview" width="600" >}}
 
-## Keypad Mapping
-- **Mode Switching:** Due to the limited number of keys on the keypad, mode switching was used
-- **Default Mode:** `A–D` → `+ - * /`, adjacent key → `=`, lower left → `Clear`
-{{< figure src="/assets/calculator/image_33.png" alt="Hardness for lasers" width="600" >}}
-- **Left Shift Mode (L):** Arrow keys, `del`, `ins`
-{{< figure src="/assets/calculator/image_5.png" alt="Hardness for lasers" width="600" >}}
-- **Right Shift Mode (R):** `()`, `.`, `^`, `Clear All`
-{{< figure src="/assets/calculator/image_17.png" alt="Hardness for lasers" width="600" >}}
+# Methods
 
-## Software
-- **Input parsing:** Lexer/tokenizer and recursive descent parser
-- **Computation:** Infix notation with proper order of operations
-- **Display logic:** Shows expressions and results with context-aware alignment
-- **Error handling:** Returns messages like `ERR:SYNTAX`, `ERR:DIV BY 0`, etc.
+## Hardware Design
 
+The device was constructed with the following components:
 
+- **Microcontroller**: Arduino Nano  
+- **Display**: 1602 LCD module using I2C interface  
+- **Input**: 4x4 membrane keypad with two external shift buttons  
+- **Power**: 5V via USB Mini-B  
 
-## System Design
-- **Modules:** 
-  - `CalcLexer` – Tokenizes user input
-  - `CalcParser` – Recursively evaluates expressions
-  - `LcdController` – Manages LCD content
-  - `KeypadController` – Maps key inputs and shift states
+{{< figure src="/assets/calculator/image_8.png" alt="Arduino Nano and components" width="600" >}}  
+{{< figure src="/assets/calculator/image_18.png" alt="1602 LCD" width="600" >}}  
+{{< figure src="/assets/calculator/image_20.png" alt="Membrane Keypad" width="600" >}}
 
-- **Architecture:** Clean object-oriented design with clearly divided subsystems for input, display, and computation.
+## Input Modes and Key Mapping
 
-## Build Diagrams
-- TinkerCAD schematic of the system
-- Breadboard and wiring layouts
-- LCD and keypad pin connections
-- Flowcharts for data processing and system interaction
+Due to the limited key count, shift-based modes were implemented:
 
-## Operating Notes
-- Operates in 40%±30% humidity and –40°F to 185°F
-- Not resistant to drops or moisture—no protective chassis
-- Powered exclusively via USB
+- **Default Mode**: `A–D` map to `+ – × ÷`, with `=` and `Clear` mapped to dedicated keys  
+- **Left Shift Mode**: Arrow keys, Insert, Delete  
+- **Right Shift Mode**: Parentheses, decimal, exponentiation, Clear All
 
+{{< figure src="/assets/calculator/image_33.png" alt="Default Keymap" width="600" >}}  
+{{< figure src="/assets/calculator/image_5.png" alt="Left Shift Mode" width="600" >}}  
+{{< figure src="/assets/calculator/image_17.png" alt="Right Shift Mode" width="600" >}}
 
+## Software Architecture
 
+The software stack was divided into modular components:
 
+- **CalcLexer**: Tokenizes user input into meaningful elements  
+- **CalcParser**: Recursively evaluates expressions with proper precedence  
+- **LcdController**: Formats and displays expressions and results  
+- **KeypadController**: Handles raw input, shift state, and cursor navigation
 
-## Expression Evaluation: Lexer & Parser
+This modular approach ensures scalability and maintainability.
 
-To support full arithmetic expressions (including parentheses, exponents, and floating-point numbers), we developed a **custom recursive descent parser** backed by a **lexer/tokenizer**. This allowed us to move beyond simple two-number operations and handle full algebraic expressions with correct operator precedence and error detection.
+# Results
 
-### 🔍 Lexer (Tokenizer)
-{{< figure src="/assets/calculator/image_46.png" alt="Hardness for lasers" width="600" >}}
-The lexer scans the raw input string and converts it into a stream of tokens. These tokens represent numbers, operators (`+`, `-`, `*`, `/`, `^`), parentheses, and the end of the expression.
+## System Capabilities
 
-**Token types included:**
-- `NUM`: Any numeric value (integer or float)
-- `ADD`, `SUB`, `MUL`, `DIV`, `POW`: Arithmetic operators
-- `L_PAR`, `R_PAR`: Left and right parentheses
-- `END`: End of expression
+- Full arithmetic expression evaluation with support for:
+  - Parentheses
+  - Exponents
+  - Floating-point numbers
+- Real-time syntax validation
+- Scrollable input editing
+- History-based navigation for recent expressions
+- Dual-clear modes (single line and full reset)
 
-**Example:**
-```
-Input: "5 / (6 + 2)"
-Tokens: NUM DIV L_PAR NUM ADD NUM R_PAR
-```
+## Evaluation Environment
 
-### 🧠 Parser (Recursive Descent)
-{{< figure src="/assets/calculator/image_31.png" alt="Hardness for lasers" width="600" >}}
-The parser evaluates the token stream using a **context-free grammar** with recursion to respect the order of operations:
+- Operates in environments between –40°F and 185°F  
+- Optimal humidity range: 40% ± 30%  
+- No chassis—device is sensitive to physical impact or moisture  
+- Requires 5V USB power only
+
+# Expression Parsing and Evaluation
+
+To support complex expressions, the system implements a **custom lexer and recursive descent parser**.
+
+### Tokenization
+
+The lexer converts raw input into structured tokens:
+
+- **Token Types**: `NUM`, `ADD`, `SUB`, `MUL`, `DIV`, `POW`, `L_PAR`, `R_PAR`, `END`
+
+**Example Input**: `"5 / (6 + 2)"`  
+**Tokenized**: `NUM DIV L_PAR NUM ADD NUM R_PAR`
+
+{{< figure src="/assets/calculator/image_46.png" alt="Lexer Output" width="600" >}}
+
+### Recursive Descent Parser
+
+The parser respects order of operations and grouping using the following grammar:
 
 ```
-Operand:
-  → **NUM**
 
-EXP:
-  → Operand
-  | **LEFT_PAR** ADD_SUB_EXP **RIGHT_PAR**
-  | **SUB** ADD_SUB_EXP
+Operand        → NUM
+EXP            → Operand | L\_PAR ADD\_SUB\_EXP R\_PAR | SUB ADD\_SUB\_EXP
+POW\_EXP        → EXP POW EXP | EXP
+MUL\_DIV\_EXP    → POW\_EXP (MUL | DIV) POW\_EXP | POW\_EXP
+ADD\_SUB\_EXP    → MUL\_DIV\_EXP (ADD | SUB) MUL\_DIV\_EXP | MUL\_DIV\_EXP
 
-POW_EXP:
-  → EXP **POW** EXP
-  | EXP
-
-MUL_DIV_EXP:
-  → POW_EXP **MUL** POW_EXP
-  | POW_EXP **DIV** POW_EXP
-  | POW_EXP
-
-ADD_SUB_EXP:
-  → MUL_DIV_EXP **ADD** MUL_DIV_EXP
-  | MUL_DIV_EXP **SUB** MUL_DIV_EXP
-  | MUL_DIV_EXP
 ```
 
-This approach supports:
-- Proper **precedence**: `*` and `/` before `+` and `-`, and `^` before both
-- **Associativity**: Left-to-right for most ops, right-to-left for `^`
-- **Parentheses** for grouping
-- **Negative numbers** and **unary minus** (e.g., `-5`, `2 + -6`)
-- **Floating point precision** with 2-decimal accuracy on LCD
+This design supports:
 
-### 🛠 Error Handling
-The lexer/parser combination detects and reports:
-- `ERR:SYNTAX` – Invalid token arrangement
-- `ERR:DIV BY 0` – Division by zero
-- `ERR:DECM SYNTAX` – Multiple decimal points in a number
-- `ERR:NO R_PAR` – Missing closing parenthesis
+- Operator precedence (`^` > `× ÷` > `+ –`)  
+- Left- and right-associative rules  
+- Unary negation (e.g., `-5`, `2 + -6`)  
+- Floating-point precision
 
-### 🧪 Sample Evaluations
+{{< figure src="/assets/calculator/image_31.png" alt="Parser Flow" width="600" >}}
 
-``` 
-Input: 5 + 3 * 5 → Output: 20 (Multiplication before addition) 
-```
-{{< figure src="/assets/calculator/image_7.png" alt="Calculation Example 1" width="600" >}}
-```
-Input: (5 + 3) * 5 → Output: 40 (Parentheses override precedence)
-```
-{{< figure src="/assets/calculator/image_24.png" alt="Calculation Example 2" width="600" >}}
-```
-Input: 5 * ((4 - 5)/0.5) → Output: -10 (Nested expressions + float division)
-```
-{{< figure src="/assets/calculator/image_1.png" alt="Calculation Example 3" width="600" >}}
+### Error Handling
 
----
+Robust validation was built in to detect:
+
+- **Syntax Errors**: `ERR:SYNTAX`  
+- **Division by Zero**: `ERR:DIV BY 0`  
+- **Floating Point Errors**: `ERR:DECM SYNTAX`  
+- **Unmatched Parentheses**: `ERR:NO R_PAR`
+
+### Sample Evaluations
+
+```
+
+Input: 5 + 3 \* 5       → Output: 20
+
+```
+{{< figure src="/assets/calculator/image_7.png" alt="Sample Evaluation 1" width="600" >}}
+
+```
+
+Input: (5 + 3) \* 5     → Output: 40
+
+```
+{{< figure src="/assets/calculator/image_24.png" alt="Sample Evaluation 2" width="600" >}}
+
+```
+
+Input: 5 \* ((4 - 5)/0.5) → Output: -10
+
+```
+{{< figure src="/assets/calculator/image_1.png" alt="Sample Evaluation 3" width="600" >}}
+
+# Conclusion
+
+This project demonstrates the practical implementation of advanced parsing logic and real-time arithmetic evaluation on embedded hardware. With limited input hardware and display space, the system still supports complex expressions and interactive editing. The modular architecture and extensible design open pathways for additional features such as scientific functions, graphical output, or external model loading in future iterations.
+
+
+## References
+
+- [stb_image](https://github.com/nothings/stb/blob/master/stb_image.h) – Image parsing (used in related projects)  
+- [TinkerCAD](https://www.tinkercad.com/) – Schematic design  
+- [Arduino Nano](https://store.arduino.cc/products/arduino-nano) – Microcontroller documentation
 

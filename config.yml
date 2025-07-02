@@ -64,7 +64,7 @@ params:
       enable: true
       avatarURL: "assets/2025Headshot.jpg"
       title: "Dominic Benintendi"
-      subtitle: "Studied at Ohio University for Computer Science and Electrical Engineering."
+      subtitle: "Majored in Computer Science and Electrical Engineering at Ohio University"
       social: true
     posts:
       enable: true

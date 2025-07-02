@@ -5,109 +5,108 @@ draft: false
 featuredImage: "/assets/graphics_project/image_page5_1.png"
 authors: ["Dominic"]
 ---
+> **Contributors**: Dominic Benintendi (Design & Implementation)  
+> **GitHub Repository**: *Link coming soon*
 
-Working on this project taught me a priceless amount of information regarding computer graphics. I feel accomplished in how much was achieved with such a simple little project. To dive a little deeper, we will talk about what my project is, what technologies and strategies were used to implement it, what went right, and what went wrong.
+# Introduction
 
-To give a quick recap, our goal this project was to implement a 3D Duck Game. I love first-person shooters, so I knew without a doubt that this was something I wanted to do, but creating a 3D Graphics Engine was no easy feat. So through tireless trial and error, I arrived at a product that beautifully illustrates all technological aspects of this class.
+This project involved the development of a voxel-based 3D graphics engine in C++ using OpenGL. The goal was to create a first-person "duck game" experience rendered entirely with a custom engine. Through iterative development, modular design, and in-depth experimentation, the final product integrates core graphics concepts, including lighting models, texture mapping, and real-time mesh instancing.
 
-Let’s dive right into how exactly I created a 3D graphics engine, starting first from our foundation. The Minecraft Light Project was a good place to start. I had created a camera that can fly around in 3D space, and simple blocks that can be placed or removed with the mouse. The problem with this code is that it was messy and I wanted to create a product that would not only work, but would be clean enough to be worked on in the future. A good portion of my time went into refactoring the basic building blocks that make up an OpenGL program by putting each major component in its own class so that it might be automated.
+# Background and Motivation
 
-First was the VBO, VAO, EBO. These were simple enough, but the switch from using `glDrawArrays()` → `glDrawElements()` was a tough one. Wrapping my brain around why exactly it worked took a good portion of time. To simplify: instead of having all 36 of our cube vertices in an array and shipping it off to `glDrawArrays()`, we find the 24 unique points of a cube, including position, color, normal, and UV mapping (we will get to normals and UV later).  
-By simply putting these unique vertices into our VBO, and loading our EBO with the 36 indices of our newly created vertices, we have a much more modular and efficient way to draw cubes.
+The project was inspired by voxel-based games and the desire to understand the fundamentals of 3D rendering pipelines. Previous experience from the “Minecraft Light” assignment provided a starting point, where basic camera control and block placement were implemented. However, the initial codebase lacked modularity and scalability. This project aimed to build a clean, maintainable engine architecture with reusable components and extendable graphics features.
 
-Next was textures. This was a big challenge for me because I had to know UV texture coordinates inside out. Another problem I had to tackle was getting the actual pictures loaded into the program. Thankfully I found an open source C++ script called `stb_image` that takes a `.png` file and converts it to a buffer string. Getting textures wasn’t all that terrible, but getting them to appear on each face of a cube was difficult.
+# Methods
+
+## Engine Architecture
+
+The engine was refactored to encapsulate key OpenGL constructs, VBOs, VAOs, and EBOs, into dedicated classes. A transition was made from `glDrawArrays()` to `glDrawElements()` to reduce data redundancy by using indexed drawing. Instead of sending 36 cube vertices directly, the engine now defines 24 unique vertices with attributes for position, color, normals, and UV mapping, using indices for efficient rendering.
+
+## Texture Mapping
+
+Texture loading was accomplished using the open-source `stb_image` library, which parses PNG images into buffer data. Applying textures to all six cube faces required resolving the mismatch between shared vertex positions and distinct UV coordinates or normals. The solution involved expanding the vertex array to 24 entries to capture these differences explicitly.
 
 {{< figure src="/assets/graphics_project/image_page2_1.png" alt="Figure 1" width="600" >}}
 
-As you can see, only two sides of the cubes were actually textured. The problem was: while two vertices might share the same position, they might not share the same UV texture coordinates and normals.  
-Learning this, I had to take my original 8 vertices and turn it into 24, accounting for UV and normals. This process took some time and changed how I would be rendering things in the future.
+## Lighting Implementation
+
+The engine supports ambient, diffuse, and specular lighting:
+
+- **Ambient** lighting applies a constant illumination level across all fragments.  
+- **Diffuse** lighting varies with the angle between the light source and surface normals.  
+- **Specular** lighting simulates reflected light and depends on both normals and the camera position.
+
+Normals were embedded in the vertex array and used in the fragment shader for lighting calculations. A previously implemented camera class allowed straightforward access to view direction, enabling realistic specular highlights.
+
+## Mesh Abstraction and Instancing
+
+To automate object creation and improve flexibility, a generalized `Mesh` class was developed. This class contains all the logic required to render any indexed mesh and serves as a foundation for creating instances of renderable objects. A `Cube` wrapper class provides additional parameters for position, scale, and rotation, making it possible to instantiate arbitrary cubes with different transformations.
 
 {{< figure src="/assets/graphics_project/image_page3_1.png" alt="Figure 2" width="600" >}}
 
-Nice, looks good. Now each side of the square was textured how I wanted. Now was the tricky part: I needed to implement lighting!
+## Editing Tools and World Persistence
 
-This program utilizes the three main lighting techniques: ambient, diffuse, and specular lighting.  
-- **Ambient** is a flat brightness level that affects all surfaces equally.  
-- **Diffuse** light more heavily impacts surfaces that are facing it.  
-- **Specular** simulates light bouncing off surfaces into the user’s eye.
+An in-game editor was added to allow real-time modification of cube attributes, including:
 
-Ambient is very easy—it’s just a scalar value applied to all fragments. But… diffuse and specular are a little more tricky. This is where our lovely normals come into effect. Normals are simply vectors that point perpendicular to any given surface. As you may have surmised from the previous paragraph, normals are now implemented in our vertex array, so referencing these in our vertex shaders is as simple as pie.
+- Position (vec3)  
+- Scale (vec3)  
+- Rotation (vec3)  
+- Texture index
 
-Things are looking good now. With normals implemented, we can now use diffuse lighting to its full extent. Specular lighting takes a little more work… As you may already know as a professor of a graphics design class. Specular lighting not only makes use of normals but also makes use of the current camera position. Thankfully, we have implemented a camera class in our last Minecraft Light assignment, so passing over the camera position info as a `vec3` is very easy.  
-Now with specular, diffuse, and ambient light all in effect, things are looking groovy. Now it's time to work on our instancing functions.
+All cube configurations are serialized to disk on exit and loaded on startup, enabling persistent worlds.
 
-To this point, we have been placing objects in a restricted grid and creating these cube meshes in our `main()` function. This is unacceptable and must be changed. We do this by first updating our cube class to support a larger variety of customization options, including:
-- precise `vec3` position values  
-- `vec3` scalar values  
-- `vec3` rotation values  
+{{< figure src="/assets/graphics_project/image_page4_1.png" alt="Figure 3: Example scene - 'Obama House'" width="600" >}}
 
-These three values will allow us to create a cube of any size or orientation. The hard part was somehow automating our cube mesh into a changeable and customizable class.
+## Camera and Interaction Modes
 
-The mesh class—one of the hardest things I have done—takes all the steps we have worked on so far and combines them into an expandable, automatable, easy-to-use class object. This class alone holds all the vertices and indices needed to render any type of object imaginable, **not just cubes.** This is peak performance out of any 3D renderer.
+Two camera modes were implemented:
 
-With this in place, and a new class called `Cubes` which handles these diverse and unique cube objects, I would like to present to you…
+1. **Free-fly Camera Mode** – standard 3D navigation with full control.
+2. **Survival Mode** – an FPS-style camera affected by gravity, featuring jump controls.
 
-{{< figure src="/assets/graphics_project/image_page4_1.png" alt="Figure 3" width="600" >}}
+These interaction modes enhance usability and mimic game-like exploration mechanics.
 
-**Obama House.** Outstanding, isn’t it? Absolutely brilliant… and the best part? These cube objects are stored in non-volatile memory. By writing to a file before exiting the program, the individual cube objects can be stored and loaded for a future time.
+{{< figure src="/assets/graphics_project/image_page5_1.png" alt="Figure 4" width="600" >}}
 
-Thankfully, I did not hard code these cubes in by hand—that would have been awful. In order to allow diverse level editing, I made a system that allows the user to click on a cube and edit its attributes live. These attributes include:
-- position  
-- scale  
-- rotation  
-- texture  
+# Results
 
-This tool allows me to create worlds.
+The final application demonstrates:
 
-In order to allow more options for player movement, I implemented two modes of transportation:
-1. Our standard flying 3D camera view  
-2. An FPS-style “boots on the ground” view affected by gravity (Survival mode)  
+- Modular rendering with reusable mesh logic  
+- Dynamic lighting using real-time shading models  
+- Accurate texture mapping across all object faces  
+- A lightweight in-engine editor for live scene creation  
+- Persistent world saving/loading through file serialization
 
-This “Survival Mode” also sports a simple jump button that can be seen in the presentation.
+The voxel environment supports intuitive navigation and editing, and is expandable to include non-cube objects.
 
-{{< figure src="/assets/graphics_project/image_page5_1.png" alt="Figure 5" width="600" >}}
+# Known Issues
 
-Beautiful, isn’t it?
+Some limitations in the current version include:
 
----
+- Object collision does not account for rotated instances  
+- Normal vectors are not recalculated after object rotation  
+- Player collision detection is incomplete  
+- Mouse cursor remains visible during camera rotation  
 
-## Known Issues
+# Future Improvements
 
-Despite its greatness, the program had a few shortcomings:
+Planned enhancements include:
 
-- Collisions don’t work with rotated objects  
-- Normals of objects don’t take into account an object’s rotation  
-- User has no collision detection with walls  
-- The cursor still shows up when looking around  
+- Support for external 3D model loading (e.g., OBJ files)  
+- Accurate collision detection system  
+- Implementation of a skybox and environmental lighting  
+- Use of specular maps for textured materials  
+- Addition of a HUD with a crosshair  
 
----
+# Conclusion
 
-## Future Improvements
-
-Besides fixing the existing bugs:
-
-- Allow for model loading  
-- Implement a proper 3D skybox  
-- Implement a diverse object array class  
-- Implement a more accurate collision system  
-- Implement the use of specular lighting textures  
-- Render a crosshair for easier clicking  
+This project significantly advanced my understanding of 3D graphics programming. The hands-on experience with OpenGL, mesh optimization, and shader development provided a deep appreciation for real-time rendering challenges. Beyond coursework, this engine lays the foundation for future personal game engine development. The system is designed to be scalable, reusable, and highly customizable—qualities essential to any robust rendering pipeline.
 
 ---
 
-An experience to be sure—this project was the most fun I have ever had coding in C++. The knowledge gained has immense real-world applications and allows a new line of thinking. I fail to express how much of a blast this was. My knowledge of linear algebra alone has expanded twofold. Never have I had the thought of continuing a project after it’s been graded… until now.
+## References
 
-**Thank you.**
-
----
-
-## Sources
-
-**stb_image** (Used to load images from a file):  
-https://github.com/nothings/stb/blob/master/stb_image.h
-
-**Victor Gordan** (Brilliant OpenGL Tutorials):  
-https://www.youtube.com/channel/UC8WizezjQVClpWfdKMwtcmw
-
----
+- [stb_image – Image Loading Library](https://github.com/nothings/stb/blob/master/stb_image.h)  
+- [Victor Gordan – OpenGL Tutorials](https://www.youtube.com/channel/UC8WizezjQVClpWfdKMwtcmw)
 

@@ -5,12 +5,14 @@ draft: false
 featuredImage: "/assets/EECapstone/Photos/figures/cover.png"
 authors: ["Dominic"]
 ---
+> **Contributors**: Dominic Benintendi (Software Architecture, Game Engine), Ian Gant (Analog Design, Galvo Control), Aditya Sahi (Firmware, Communication Protocols), Drew Edmonds (Chassis Design, Power Systems)  
+> **GitHub Repository**: [DominicBen/LASER-LIGHT-SHOW](https://github.com/DominicBen/LASER-LIGHT-SHOW)
 
+# Introduction
 In my final year at Ohio University, I worked on a senior design project that required a full-stack approach to hardware and software integration. Together with my teammates—Ian Gant, Aditya Sahi, and Drew Edmonds—we developed a laser-based game console capable of projecting vector graphics, animations, and multiple playable games using precision-controlled laser beams.
 
 The system, which we named the Laser Light Show, combined embedded systems design, analog signal processing, optics, 3D modeling, software engineering, and real-time control. We set out to design something interactive and technically novel, and we succeeded by staying grounded in first principles and rigorous testing.
 [GitHub Repository](https://github.com/DominicBen/LASER-LIGHT-SHOW)
-## 🎯 Project Overview
 
 The core idea was to steer a focused laser beam using galvo-mounted mirrors to draw images in mid-air, fast enough to leverage persistence of vision. These vector drawings would be interactive—controlled via handheld input devices—and capable of supporting full game logic.
 
@@ -23,7 +25,7 @@ What started as a technical curiosity evolved into a fully functional embedded c
 * RBG Colors - Three colored beams where combined using a prism. Each color channel could be controlled by varying the voltage into the corresponding colored lasers
 
 {{< figure src="/assets/EECapstone/Photos/figures/3lazserv2.jpg" alt="RBG Laser Design" width="600" >}}
-
+# Methods
 ## 🧩 Software System Architecture
 {{< figure src="/assets/EECapstone/Photos/figures/software_overview.drawio.png" alt="Concept Art" width="600" >}}
 From the start, we focused on modularity, real-time performance, and low-latency control. We outgrew the Arduino IDE quickly and moved the project into PlatformIO. This allowed me to build a maintainable C++ architecture that supported the growing list of subsystems.
@@ -123,7 +125,7 @@ Final integration was one of the most difficult stages. Several issues had to be
 
 These were all debugged incrementally. Testing and verification at the system level—hardware, software, and UI combined—was essential.
 
-## 🧠 Key Takeaways
+# Conclusion
 
 * Modular design enables scaling: A clean software architecture allowed us to extend from simple shapes to complex games.
 * Start integration early: Working subsystems can fail unexpectedly when combined.
@@ -131,7 +133,6 @@ These were all debugged incrementally. Testing and verification at the system le
 * Reliable input is non-negotiable: Swapping wireless for wired was the right tradeoff.
 
 {{< video src="/assets/EECapstone/Animations/senior_design_video_final_compressed.mp4" alt="Cad model" width="900" >}}
-## 🧵 Closing Thoughts
 
 The Laser Light Show Console was both an engineering challenge and a proving ground. It combined embedded control, real-time graphics, interactive input, and hardware design. The difficulties were numerous, which is why winning first place at the expo was all the sweeter.
 
